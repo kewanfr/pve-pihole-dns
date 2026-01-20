@@ -1,0 +1,28 @@
+# Configuration Proxmox
+proxmox:
+  host: "192.168.0.X"              # IP ou hostname de votre serveur Proxmox
+  user: "root@pam"                  # Utilisateur Proxmox
+  token_name: "API_NAME"          # Nom du token API
+  token_value: "API_TOKEN"  # Valeur du token API
+  node: "NODE_NAME"                       # Nom du node Proxmox
+  pool: "RESSOURCE_POOL"                   # Nom du resource pool à synchroniser
+  verify_ssl: false                 # Vérification SSL (false pour certificats auto-signés)
+
+proxmox2:
+  host: "192.168.0.X"
+  user: "root@pam"               
+  token_name: "API_NAME"          
+  token_value: "API_TOKEN"    
+  node: "NODE_NAME"                  
+  pool: "RESSOURCE_POOL"                 
+  verify_ssl: false         
+
+# Configuration Pi-hole
+pihole:
+  url: "http://192.168.0.X"        # URL de votre Pi-hole
+  password: "PIHOLE_PASSWORD"       # Mot de passe Pi-hole (pour l'API v6)
+
+# Configuration DNS
+dns:
+  domain: "pve.hosts"               # Domaine de base pour les entrées DNS
+  network_cidr: "192.168.0.0/24"    # Réseau à surveiller pour les IPs des VMs
