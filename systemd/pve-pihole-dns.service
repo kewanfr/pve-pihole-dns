@@ -1,0 +1,14 @@
+[Unit]
+Description=Synchronisation DNS Pi-hole pour VMs Proxmox
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/pve-pihole-dns/pve_pihole_dns.py -c /etc/pve-pihole-dns/config.yaml
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=pve-pihole-dns
+
+[Install]
+WantedBy=multi-user.target

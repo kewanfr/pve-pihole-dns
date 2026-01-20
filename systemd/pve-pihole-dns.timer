@@ -1,0 +1,11 @@
+[Unit]
+Description=Timer pour synchronisation DNS Pi-hole (toutes les 5 minutes)
+Requires=pve-pihole-dns.service
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+Unit=pve-pihole-dns.service
+
+[Install]
+WantedBy=timers.target
