@@ -302,7 +302,7 @@ class PiHoleDNSManager:
 
         # 4. Troisième alias: name.internal -> name.pve.hosts
         alias2 = f"{vm_name}.internal"
-        target2 = f"{vm_name}.pve.internal"
+        target2 = f"{vm_name}.pve.hosts"
         logger.info(f"Ajout alias: {alias2} -> {target2}")
         if not self.client.add_cname_record(alias2, target2):
             logger.error(
