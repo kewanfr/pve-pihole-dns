@@ -73,7 +73,7 @@ class PiHoleClient:
             
             # Délai de 1s seulement pour les requêtes de modification (PUT/DELETE)
             if delay and method in ['PUT', 'DELETE']:
-                time.sleep(1.0)
+                time.sleep(5.0)
             
             return response.json()
         except Exception as e:
