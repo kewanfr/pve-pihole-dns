@@ -300,4 +300,14 @@ class PiHoleDNSManager:
             logger.error(f"Échec de l'ajout de la redirection CNAME pour {alias2} -> {target2}")
             success = False
 
+        # 4. Troisième alias: name.internal -> name.pve.hosts
+        alias2 = f"{vm_name}.internal"
+        target2 = f"{vm_name}.pve.internal"
+        logger.info(f"Ajout alias: {alias2} -> {target2}")
+        if not self.client.add_cname_record(alias2, target2):
+            logger.error(
+                f"Échec de l'ajout de la redirection CNAME pour {alias2} -> {target2}"
+            )
+            success = False
+
         return success
